@@ -32,7 +32,19 @@ async function getAllUsers(req, res) {
   }
 }
 
+async function getUserByMailId(req, res) {
+  try {
+    const user = await userService.getUserByMailId(req.params.email);
+    if (!user) return res.status(404).json({ success: false, message: 'User not found' });
+    res.json({ success: true, data: user });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Failed to fetch user' });
+  }
+}
+
 module.exports = {
   createUser,
   getAllUsers,
+  getUserByMailId,
 };

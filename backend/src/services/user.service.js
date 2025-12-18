@@ -9,7 +9,14 @@ async function getAllUsers() {
     return await User.find().lean();
 }
 
+async function getUserByMailId(email) {
+    return await User.find({
+        email: { $regex: `^${email}`, $options: "i" }
+    });
+}
+
 module.exports = {
-	createUser,
-	getAllUsers,
+    createUser,
+    getAllUsers,
+    getUserByMailId,
 };
