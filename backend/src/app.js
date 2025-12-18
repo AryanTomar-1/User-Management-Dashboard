@@ -1,11 +1,14 @@
 const express = require("express");
 const cors = require("cors");
-const nameRoutes = require("./routes/nameRoutes");
+const userRoutes = require("./routes/user.route");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// User routes
+app.use('/users', userRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {
