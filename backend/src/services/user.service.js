@@ -28,9 +28,15 @@ async function updateUser(email, updates) {
     return updated;
 }
 
+async function deleteUser(email) {
+    const res = await User.findOneAndDelete({ email: email });
+    return !!res;
+}
+
 module.exports = {
     createUser,
     getAllUsers,
     getUserByMailId,
     updateUser,
+    deleteUser,
 };

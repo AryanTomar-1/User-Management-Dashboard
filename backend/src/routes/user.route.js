@@ -15,4 +15,7 @@ router.get('/find/:email', userController.getUserByMailId);
 // Update a user's details
 router.put('/update/:email', updateUserValidation, userController.updateUser);
 
+// Delete a user
+router.delete('/delete/:email', userController.deleteUser);
+
 module.exports = router;

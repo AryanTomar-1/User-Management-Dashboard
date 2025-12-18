@@ -58,9 +58,21 @@ async function updateUser(req, res) {
   }
 }
 
+async function deleteUser(req, res) {
+  try {
+    const ok = await userService.deleteUser(req.params.email);
+    if (!ok) return res.status(404).json({ success: false, message: 'User not found' });
+    res.json({ success: true, message: 'User deleted' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Failed to delete user' });
+  }
+}
+
 module.exports = {
   createUser,
   getAllUsers,
   getUserByMailId,
   updateUser,
+  deleteUser,
 };
