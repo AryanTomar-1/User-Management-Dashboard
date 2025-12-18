@@ -5,6 +5,11 @@ async function createUser(data) {
     return await user.save();
 }
 
+async function getAllUsers() {
+    return await User.find().lean();
+}
+
 module.exports = {
 	createUser,
+	getAllUsers,
 };

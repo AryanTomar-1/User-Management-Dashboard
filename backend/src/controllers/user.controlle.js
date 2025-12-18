@@ -22,6 +22,17 @@ async function createUser(req, res) {
   }
 }
 
+async function getAllUsers(req, res) {
+  try {
+    const users = await userService.getAllUsers();
+    res.json({ success: true, data: users });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Failed to fetch users' });
+  }
+}
+
 module.exports = {
   createUser,
+  getAllUsers,
 };
