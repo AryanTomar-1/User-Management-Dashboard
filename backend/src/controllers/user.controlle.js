@@ -43,8 +43,24 @@ async function getUserByMailId(req, res) {
   }
 }
 
+async function updateUser(req, res) {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) return res.status(400).json({ success: false, errors: errors.array() });
+
+    const updated = await userService.updateUser(req.params.email, req.body || {});
+    if (!updated) return res.status(404).json({ success: false, message: 'User not found' });
+    res.json({ success: true, data: updated });
+  } catch (err) {
+    console.error(err);
+    if (err.name === 'ValidationError') return res.status(400).json({ success: false, message: err.message });
+    res.status(500).json({ success: false, message: 'Failed to update user' });
+  }
+}
+
 module.exports = {
   createUser,
   getAllUsers,
   getUserByMailId,
+  updateUser,
 };

@@ -15,8 +15,22 @@ async function getUserByMailId(email) {
     });
 }
 
+async function updateUser(email, updates) {
+    const updated = await User.findOneAndUpdate(
+        { email: email },
+        updates,
+        {
+            new: true,
+            runValidators: true,
+            context: 'query',
+        }
+    ).lean();
+    return updated;
+}
+
 module.exports = {
     createUser,
     getAllUsers,
     getUserByMailId,
+    updateUser,
 };
