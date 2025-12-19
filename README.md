@@ -87,38 +87,38 @@ Open your browser and go to `http://localhost:3000` to view the User Management 
 
 1. show all users
 
-![User List Screenshot](assets/pic1.png)
+![User List Screenshot](screenShot/pic1.png)
 
 2. search user
 
-![User List Screenshot](assets/pic2.png)
+![User List Screenshot](screenShot/pic2.png)
 
 3. Create user
 
-![User List Screenshot](assets/pic3.png)
+![User List Screenshot](screenShot/pic3.png)
 
 4.show new user in the list
 
-![User List Screenshot](assets/pic4.png)
+![User List Screenshot](screenShot/pic4.png)
 
 5. show user details
 
-![User List Screenshot](assets/pic5.png)
+![User List Screenshot](screenShot/pic5.png)
 
 6. Edit user details
 
-![User List Screenshot](assets/pic6.png)
+![User List Screenshot](screenShot/pic6.png)
 
 7. show user edit details
 
-![User List Screenshot](assets/pic7.png)
+![User List Screenshot](screenShot/pic7.png)
 
 8. Delete confirmation message
 
-![User List Screenshot](assets/pic8.png)
+![User List Screenshot](screenShot/pic8.png)
 
 9. Delete successful message and show updated list
 
-![User List Screenshot](assets/pic9.png)
+![User List Screenshot](screenShot/pic9.png)
 
 
